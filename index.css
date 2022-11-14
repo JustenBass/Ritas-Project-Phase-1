@@ -1,0 +1,110 @@
+body {
+    background-color: black;
+}
+
+#title {
+    color:white;
+    background-color: #73AD21;
+    font-family: cursive;
+    font-size: 500%;
+
+}
+
+#scroll{
+    color: white;
+}
+
+#address {
+    color: white;
+    background-color:#73AD21;
+    font-family: cursive;
+}
+
+h1.drinkTitles {
+    color:black;
+    margin-left: 26%;
+    font-family: cursive;
+}
+
+.card {
+    position: relative;
+    margin-left: 25%;
+}
+
+
+p{
+    color: black;
+}
+
+
+
+  div#menu {
+    width: 900px;
+    margin: auto;
+    border: 10px solid #73AD21;
+    background-color: white;
+  }
+
+
+
+img#venue {
+    width: 919px;
+    height: 900;
+}
+
+img.photo{
+    height: 445px;
+    width: 450px;
+    margin-left: 4%;
+}
+
+
+
+  div.container {
+    width: 900px;
+    margin: auto;
+    border: 3px solid #73AD21;
+  }
+
+
+  .minusBtn{
+    margin-right: 17%;
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    color: #f2f2f2;
+    border-color: gold;
+  }
+
+  .quantityCounter{
+    margin-left: 6.5%;
+    font-size:xx-large;
+    font-style:inherit;
+  }
+
+  .plusBtn{
+    margin-left: 18%;
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border-color: gold;
+  }
+
+  #orderButton {
+    margin-left: 33%;
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border-color: gold;
+  }
+
+  #order-confirmation {
+    font-size: 100%;
+    font-family: cursive;
+    margin: 0;
+    left: 50%;
+  }
+
+

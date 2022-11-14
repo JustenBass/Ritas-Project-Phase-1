@@ -1,0 +1,38 @@
+{
+    "menu": [
+        {
+            "id": 1,
+            "name": "The Tommy",
+            "image": "https://inspiralized.com/wp-content/uploads/2022/03/Inspiralized_Margarita-3-scaled.jpg",
+            "description": "You can't go wrong with our wildly tangy strawberry maragrita!",
+            "quantity": "1"
+
+            },
+        {
+             "id": 2,
+             "name": "Ms.Short Cake",
+             "image": "https://aflavorjournal.com/wp-content/uploads/2022/07/Fresh-Strawberry-Margarita-on-the-Rocks-43.jpg",
+             "description": "You can't go wrong with our wildly tangy strawberry maragrita!",
+             "quantity": "1"
+        },
+        {
+            "id": 3,
+            "name": "Holy Shh-pice",
+            "image": "https://whatmollymade.com/wp-content/uploads/2022/04/cucumber-margarita-17.jpg",
+            "description": "If your a spice lover or even just a risk taker give our Spicy Cucumber a Shot!",
+            "quantity": "1"
+        },
+        {
+            "id": 4,
+            "name": "Sugar High",
+            "image": "https://www.eatlovenamaste.com/wp-content/uploads/2022/05/ELN_Watermelon-Margaritas-scaled.jpg",
+            "quantity": "1"
+        },
+        {
+            "id": 5,
+            "name": "MAN-go away",
+            "image": "https://www.freutcake.com/wp-content/uploads/2020/03/Spicy-Mango-Jalepeno-Margarita-NEW-5-720x720.jpg",
+            "quantity": "1"
+        }
+    ]
+}
