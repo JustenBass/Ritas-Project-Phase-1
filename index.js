@@ -87,7 +87,7 @@ function renderMargarita(menu) {
         }
 
         function resetQuantity() {
-          span.innerText = 0
+            countReset(numberOfDrinks)
         }
 
         orderButton.addEventListener('click', displayOrderBtnParagraph)
