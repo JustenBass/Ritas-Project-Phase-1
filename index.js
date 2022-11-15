@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
 function renderMargarita(menu) {
     let card = document.createElement('div')
     card.className = 'card'
@@ -22,9 +24,24 @@ function renderMargarita(menu) {
 
     card.append(h1)
 
+    let img = document.createElement('img')
+    img.className = 'photo'
+    img.id ='photo2'
+    img.src = menu.image
 
-
-        document.querySelector('#menu').appendChild(card)
+    document.querySelector('#menu').appendChild(card)
 }
 margaritaData()
+
+
+
+// function changedrinkImg(){
+//   document.getElementById('photo2').src=
+//   "https://www.promotionchoice.com/upload/product_images/2592/40oz_.jpg"
+// }
+
+// document.getElementById('photo2').addEventListener('mouseover',changedrinkImg)
+
+
+
 
