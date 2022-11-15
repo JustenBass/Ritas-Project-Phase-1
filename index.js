@@ -139,3 +139,4 @@ function quantity(margObj, numberOfDrinks){
   })
   .then(res => res.json())
   .then(updatedQuantity => (updatedQuantity))
+}
