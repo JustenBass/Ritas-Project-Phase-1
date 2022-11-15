@@ -32,8 +32,9 @@ function renderMargarita(menu) {
 
     let p = document.createElement('p')
     p.innerText = menu.description
+    card.append(p)
 
-    document.querySelector('#menu').appendChild(card)
+        document.querySelector('#menu').appendChild(card)
 }
 margaritaData()
 
