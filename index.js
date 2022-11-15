@@ -37,6 +37,23 @@ function renderMargarita(menu) {
     let numberOfDrinks = menu.quantity
     numberOfDrinks.id = 'test'
 
+    let minusButton = document.createElement('button')
+      minusButton.className = 'minusBtn'
+      minusButton.id = 'minusBtn'
+      minusButton.innerText = '- 🍹'
+      card.append(minusButton)
+      minusButton.addEventListener('click', () => {
+        if(numberOfDrinks >= 1){
+         numberOfDrinks--
+       }
+       span.innerHTML = numberOfDrinks
+       })
+
+       let span = document.createElement('span')
+       span.className = 'quantityCounter'
+       span.innerText = ''
+
+
         document.querySelector('#menu').appendChild(card)
 }
 margaritaData()
@@ -49,11 +66,6 @@ margaritaData()
 // }
 
 // document.getElementById('photo2').addEventListener('mouseover',changedrinkImg)
-
-
-
-
-
 
 
 
