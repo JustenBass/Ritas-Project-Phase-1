@@ -29,6 +29,22 @@ function renderMargarita(menu) {
     img.className = 'photo'
     img.id ='photo2'
     img.src = menu.image
+
+    img.addEventListener('mouseover', () => {
+      if(menu.name === "The Tommy"){
+     alert(`The ${menu.name} is made with fresh squeezed lime juice, agave, and Casa Migos Blanco Tequila`)
+      } else if (menu.name === "Ms. Short Cake"){
+        alert(`The ${menu.name} is made with fresh squeezed lime juice, agave, strawberry pure and Don Julio Blanco Tequila`)
+      } else if (menu.name === "Holy Shh-pice"){
+        alert(`The ${menu.name} is made with fresh squeezed lime juice, fresh squeezed cucumber juice, muddled sereno, agave, and Patron Blanco Tequila`)
+      }
+      else if (menu.name === "Sugar High"){
+        alert(`The ${menu.name} is made with fresh squeezed lime juice, fresh squeezed watermelon juice, agave, and Espolon Blanco Tequila`)
+      } else if (menu.name === "MAN-go away"){
+        alert(`The ${menu.name} is made with fresh squeezed lime juice, mango pure mixed with tajin, agave, and Dulce Vida Blanco Tequila`)
+      }
+
+    })
     card.append(img)
 
 
