@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
 function renderMargarita(menu) {
     let card = document.createElement('div')
     card.className = 'card'
@@ -22,7 +20,11 @@ function renderMargarita(menu) {
       e.target.style.color = "black"
     })
 
-    document.querySelector('#menu').appendChild(card)
+    card.append(h1)
+
+
+
+        document.querySelector('#menu').appendChild(card)
 }
 margaritaData()
 
