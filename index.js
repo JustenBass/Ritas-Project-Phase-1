@@ -34,6 +34,9 @@ function renderMargarita(menu) {
     p.innerText = menu.description
     card.append(p)
 
+    let numberOfDrinks = menu.quantity
+    numberOfDrinks.id = 'test'
+
         document.querySelector('#menu').appendChild(card)
 }
 margaritaData()
@@ -46,6 +49,11 @@ margaritaData()
 // }
 
 // document.getElementById('photo2').addEventListener('mouseover',changedrinkImg)
+
+
+
+
+
 
 
 
