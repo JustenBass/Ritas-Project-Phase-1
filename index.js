@@ -76,10 +76,21 @@ function renderMargarita(menu) {
         orderButton.innerText = 'ORDER'
         let orderBtnParagraph = document.createElement('p')
         orderBtnParagraph.id = 'order-confirmation'
+        orderButton.addEventListener('click', displayOrderBtnParagraph, resetQuantity)
+
+
+
+        function displayOrderBtnParagraph() {
+          orderBtnParagraph.innerText = `You ordered ${numberOfDrinks} ${menu.name}s! Your order will be ready for pick-up upon arrival.`
+        }
+        // setTimeout(() => {
+        //   orderBtnParagraph.style.display ='none'
+        // }, 10000)
 
 
         card.append(sectionOrderBTN)
         sectionOrderBTN.append(orderButton)
+        sectionOrderBTN.append(orderBtnParagraph)
 
 
 
