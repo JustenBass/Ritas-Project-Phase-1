@@ -79,6 +79,9 @@ function renderMargarita(menu) {
         orderButton.addEventListener('click', displayOrderBtnParagraph, resetQuantity)
 
 
+        function resetQuantity() {
+          getElementByIdById('test').reset()
+        }
 
         function displayOrderBtnParagraph() {
           orderBtnParagraph.innerText = `You ordered ${numberOfDrinks} ${menu.name}s! Your order will be ready for pick-up upon arrival.`
