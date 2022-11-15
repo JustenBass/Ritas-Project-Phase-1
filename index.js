@@ -54,6 +54,10 @@ function renderMargarita(menu) {
        span.innerText = ''
 
 
+
+       card.append(span)
+
+
         document.querySelector('#menu').appendChild(card)
 }
 margaritaData()
