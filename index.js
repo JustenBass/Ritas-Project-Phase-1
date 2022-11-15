@@ -58,6 +58,20 @@ function renderMargarita(menu) {
        card.append(span)
 
 
+
+      let plusButton = document.createElement('button')
+      plusButton.innerText = '+ 🍹'
+      plusButton.className = 'plusBtn'
+      plusButton.id = 'plusBtn'
+      plusButton.addEventListener('click', () => {
+        numberOfDrinks ++
+        span.innerHTML = numberOfDrinks
+
+        })
+        card.append(plusButton)
+
+
+
         document.querySelector('#menu').appendChild(card)
 }
 margaritaData()
