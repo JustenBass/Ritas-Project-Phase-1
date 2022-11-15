@@ -98,7 +98,7 @@ function renderMargarita(menu) {
 
 
         function displayOrderBtnParagraph() {
-          orderBtnParagraph.innerText = alert(`You ordered ${numberOfDrinks} ${menu.name}s! Your order will be ready for pick-up upon arrival.`)
+          orderBtnParagraph = alert(`You ordered ${numberOfDrinks} ${menu.name}s! Your order will be ready for pick-up upon arrival.`)
         }
 
         function resetQuantity(){
