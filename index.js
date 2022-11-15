@@ -70,6 +70,20 @@ function renderMargarita(menu) {
         })
         card.append(plusButton)
 
+        let sectionOrderBTN = document.createElement('section')
+        let orderButton = document.createElement('button')
+        orderButton.id ='orderButton'
+        orderButton.innerText = 'ORDER'
+        let orderBtnParagraph = document.createElement('p')
+        orderBtnParagraph.id = 'order-confirmation'
+
+
+        card.append(sectionOrderBTN)
+        sectionOrderBTN.append(orderButton)
+
+
+
+
 
 
         document.querySelector('#menu').appendChild(card)
