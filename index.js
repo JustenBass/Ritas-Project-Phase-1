@@ -126,3 +126,16 @@ function margaritaData(){
 
 
 
+
+function quantity(margObj, numberOfDrinks){
+  fetch(` http://localhost:3000/menu${margObj.id}`,{
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      'quantity': numberOfDrinks
+    })
+  })
+  .then(res => res.json())
+  .then(updatedQuantity => (updatedQuantity))
