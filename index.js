@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 function renderMargarita(menu) {
     let card = document.createElement('div')
     card.className = 'card'
@@ -29,7 +30,10 @@ function renderMargarita(menu) {
     card.append(img)
 
 
-        document.querySelector('#menu').appendChild(card)
+    let p = document.createElement('p')
+    p.innerText = menu.description
+
+    document.querySelector('#menu').appendChild(card)
 }
 margaritaData()
 
@@ -41,6 +45,7 @@ margaritaData()
 // }
 
 // document.getElementById('photo2').addEventListener('mouseover',changedrinkImg)
+
 
 
 
