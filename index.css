@@ -10,14 +10,13 @@ body {
 
 }
 
-#scroll{
-    color: white;
-}
 
-#address {
+
+#ritaAddress {
     color: white;
     background-color:#73AD21;
     font-family: cursive;
+    font-size: 400%;
 }
 
 h1.drinkTitles {
@@ -60,6 +59,7 @@ img.photo{
 
 
 
+
   div.container {
     width: 900px;
     margin: auto;
@@ -74,6 +74,7 @@ img.photo{
     background-color: black;
     color: #f2f2f2;
     border-color: gold;
+    cursor: nw-resize;
   }
 
   .quantityCounter{
@@ -89,6 +90,8 @@ img.photo{
     background-color: black;
     color: white;
     border-color: gold;
+    cursor: ne-resize;
+
   }
 
   #orderButton {

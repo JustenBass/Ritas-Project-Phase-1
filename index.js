@@ -53,7 +53,7 @@ function renderMargarita(menu) {
 
        let span = document.createElement('span')
        span.className = 'quantityCounter'
-       span.innerText = ''
+       span.innerHTML = numberOfDrinks
 
 
 
@@ -79,15 +79,20 @@ function renderMargarita(menu) {
         let orderBtnParagraph = document.createElement('p')
         orderBtnParagraph.id = 'order-confirmation'
 
+
+
         function displayOrderBtnParagraph() {
           orderBtnParagraph.innerText = `You ordered ${numberOfDrinks} ${menu.name}s! Your order will be ready for pick-up upon arrival.`
           setTimeout(() => {
-            orderBtnParagraph.style.display ='none'
+            orderBtnParagraph.innerText = ''
           }, 6000)
         }
 
-        function resetQuantity() {
-            countReset(numberOfDrinks)
+        function resetQuantity(){
+          setTimeout(() => {
+           span.innerText = numberOfDrinks = 0
+          }, 6000)
+
         }
 
         orderButton.addEventListener('click', displayOrderBtnParagraph)
