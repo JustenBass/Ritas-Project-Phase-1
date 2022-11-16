@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.getElementById('title').innerText = "RITAS"
+
 document.getElementById('venue').src= "https://images.squarespace-cdn.com/content/v1/5ded6e17e5b0744826c470fc/1575856661048-D3GR7XK0ZHVJ8CRV5GQE/_MG_2705.jpg?format=1500w"
+
+document.getElementById('ritaAddress').innerText = '756 9th Ave, New York, NY 10019'
 
 
 function renderMargarita(menu) {
@@ -50,6 +53,7 @@ function renderMargarita(menu) {
 
     let p = document.createElement('p')
     p.innerText = menu.description
+    p.id = 'drink-description'
     card.append(p)
 
     let numberOfDrinks = menu.quantity
@@ -98,7 +102,7 @@ function renderMargarita(menu) {
 
 
         function displayOrderBtnParagraph() {
-          orderBtnParagraph = alert(`You ordered ${numberOfDrinks} ${menu.name}s! Your order will be ready for pick-up upon arrival.`)
+          orderBtnParagraph = alert(`You ordered ${numberOfDrinks} ${menu.name}s! Your order will be ready for pick-up upon arrival. Payment is due upon arrival.`)
         }
 
         function resetQuantity(){

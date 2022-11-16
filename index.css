@@ -30,6 +30,12 @@ h1.drinkTitles {
     margin-left: 25%;
 }
 
+#drink-description {
+  margin-right: 24%;
+  margin-left: center;
+  font-size: larger;
+}
+
 
 p{
     color: black;
@@ -78,7 +84,7 @@ img.photo{
   }
 
   .quantityCounter{
-    margin-left: 6.5%;
+    margin-left: 7.5%;
     font-size:xx-large;
     font-style:inherit;
   }

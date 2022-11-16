@@ -4,7 +4,7 @@
             "id": 1,
             "name": "The Tommy",
             "image": "https://inspiralized.com/wp-content/uploads/2022/03/Inspiralized_Margarita-3-scaled.jpg",
-            "description": "Want to know what's in The Tommy? Hover over the drink image!",
+            "description": "The Tommy is made with fresh squeezed lime juice, agave, and Casamigos Blanco Tequila. If you like a classic citurus sensation, this is the drink for you!",
             "quantity": "0"
 
             },
@@ -12,28 +12,28 @@
              "id": 2,
              "name": "Ms. Short Cake",
              "image": "https://aflavorjournal.com/wp-content/uploads/2022/07/Fresh-Strawberry-Margarita-on-the-Rocks-43.jpg",
-             "description": "Want to know what's in Ms. Short Cake? Hover over the drink image!",
+             "description": "Ms. Short Cake is made with fresh squeezed lime juice, agave, strawberry pure, and Don Julio Blanco Tequila. You can't go wrong with the sweet, yet tangy margarita!",
              "quantity": "0"
         },
         {
             "id": 3,
             "name": "Holy Shh-pice",
             "image": "https://whatmollymade.com/wp-content/uploads/2022/04/cucumber-margarita-17.jpg",
-            "description": "Want to know what's in Holy Shh-pice? Hover over the drink image!",
+            "description": "Holy Shh-pice is made with fresh squeezed lime juice, fresh squeezed cucumber juice, agave, muddled serrano pepper, and Patron Silver Tequila. If you're a risk taker and like a little spice in your life, what's holding you back?!  ",
             "quantity": "0"
         },
         {
             "id": 4,
             "name": "Sugar High",
             "image": "https://www.eatlovenamaste.com/wp-content/uploads/2022/05/ELN_Watermelon-Margaritas-scaled.jpg",
-            "description": "Want to know what's in Sugar High Hover over the drink image!",
+            "description": "Sugar High is made with fresh squeezed lime juice, fresh squeezed watermelon, agave, and Milagro Blanco Tequila. If you love Harry Styles as much as we do, it's time to get 'Watermelon Sugar High'!",
             "quantity": "0"
         },
         {
             "id": 5,
             "name": "MAN-go away",
             "image": "https://www.freutcake.com/wp-content/uploads/2020/03/Spicy-Mango-Jalepeno-Margarita-NEW-5-720x720.jpg",
-            "description": "Want to know what's in MAN-go away? Hover over the drink image!",
+            "description": "MAN-go away is made with fresh squeezed lime juice, mango pure mixed with tajin, agave, and Espolon Blanco Tequila. This is the perfect margarita for a quick mental escape. With it's tropical flavors and unique spice we can say GOODBYE New York winter! At least for a moment with every sip.",
             "quantity": "0"
         }
     ]
