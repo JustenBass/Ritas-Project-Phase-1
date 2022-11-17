@@ -1,3 +1,1 @@
-hi
-https://youtu.be/ZWHiyjaYlnw
-
+Hello, my fellow coders and viewers. The time has come after months of studies and practices to present to you my first ever web application. I'm excited to showcase the new skills and knowledge I have adapted to create this piece of art

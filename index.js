@@ -89,10 +89,19 @@ function renderMargarita(menu) {
         orderButton.innerText = 'ORDER'
         orderSection.append(orderButton)
 
+        function orderNumber(){
+           if(numberOfDrinks < 5){
+          return 33
+        } else if (numberOfDrinks > 5){
+          return 66
+        } else {
+            console.log(55)
+          }
+      }
 
         let displayOrderBtnConfirmation = () => alert(`You ordered
         ${numberOfDrinks} ${menu.name}s! Your order will be ready
-        for pick-up upon arrival. Paymentis due upon arrival.`)
+        for pick-up upon arrival. Paymentis due upon arrival. Youre order number is ${orderNumber()}`)
 
 
         function resetQuantity(){

@@ -43,7 +43,7 @@ p{
 
 
 
-  div#menu {
+  #menu {
     width: 900px;
     margin: auto;
     border: 10px solid #73AD21;
@@ -52,7 +52,7 @@ p{
 
 
 
-img#venue {
+  #venue {
     width: 919px;
     height: 900;
 }
@@ -66,7 +66,7 @@ img#venue {
 
 
 
-  div.container {
+  .container {
     width: 900px;
     margin: auto;
     border: 3px solid #73AD21;
@@ -109,12 +109,6 @@ img#venue {
     border-color: gold;
   }
 
-  #order-confirmation {
-    font-size: 100%;
-    font-family: cursive;
-    margin: 0;
-    left: 50%;
-  }
 
 
 
