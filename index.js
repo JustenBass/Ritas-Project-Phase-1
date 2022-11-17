@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.getElementById('title').innerText = "RITAS"
+document.getElementById('title').innerText = "'RITAS"
 
 document.getElementById('venue').src=
 "https://images.squarespace-cdn.com/content/v1/5ded6e17e5b0744826c470fc/1575856661048-D3GR7XK0ZHVJ8CRV5GQE/_MG_2705.jpg?format=1500w"
@@ -119,35 +119,9 @@ function renderMargarita(menu) {
 
 
 
-// function changedrinkImg(){
-//   document.getElementById('photo2').src=
-//   "https://www.promotionchoice.com/upload/product_images/2592/40oz_.jpg"
-// }
-
-// document.getElementById('photo2').addEventListener('mouseover',changedrinkImg)
-
-
-
-
 function margaritaData(){
     fetch('http://localhost:3000/menu')
     .then(res => res.json())
     .then (margData => margData.forEach(menu => renderMargarita(menu)))
 }
 
-
-
-
-function quantity(margObj, numberOfDrinks){
-  fetch(` http://localhost:3000/menu${margObj.id}`,{
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      'quantity': numberOfDrinks
-    })
-  })
-  .then(res => res.json())
-  .then(updatedQuantity => (updatedQuantity))
-}
