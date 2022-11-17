@@ -38,52 +38,50 @@ function renderMargarita(menu) {
 
     const drinkDescription = document.createElement('p')
     drinkDescription.innerText = menu.description
-    drinkDescription.className = 'drinkDescriptions'
+    drinkDescription.className = 'drinkdDescription'
 
     menuHolder.append(drinkDescription)
 
-    const numberOfDrinks = menu.quantity
-    numberOfDrinks.id = 'test'
 
-    const minusButton = document.createElement('button')
-      minusButton.id = 'minusBtn'
+    let numberOfDrinks = menu.quantity
+
+
+    let minusButton = document.createElement('button')
+      minusButton.className = 'minusBtn'
       minusButton.innerText = '- 🍹'
-
-
-      menuHolder.append(minusButton)
 
       minusButton.addEventListener('click', () => {
         if(numberOfDrinks >= 1){
          numberOfDrinks--
        }
-       quantityCount.innerHTML = numberOfDrinks
+       drinkQuantity.innerHTML = numberOfDrinks
        })
-
-       const quantityCount = document.createElement('span')
-       quantityCount.id = 'quantityCounter'
-       quantityCount.innerHTML = numberOfDrinks
+       menuHolder.append(minusButton)
 
 
+       let drinkQuantity = document.createElement('span')
+       drinkQuantity.className = 'quantityCounter'
+      drinkQuantity.innerHTML = numberOfDrinks
 
-       menuHolder.append(quantityCount)
-
+      menuHolder.append(drinkQuantity)
 
 
       let plusButton = document.createElement('button')
-      plusButton.innerText = '+ 🍹'
       plusButton.className = 'plusBtn'
-      plusButton.id = 'plusBtn'
+      plusButton.innerText = '+ 🍹'
+
       plusButton.addEventListener('click', () => {
         numberOfDrinks ++
-        span.innerHTML = numberOfDrinks
+        drinkQuantity.innerHTML = numberOfDrinks
 
         })
+
         menuHolder.append(plusButton)
 
         let orderSection = document.createElement('section')
         let orderButton = document.createElement('button')
-        orderButton.id ='orderButton'
-        orderButton.innerText = 'ORDER'
+        orderButton.className ='orderButton'
+        orderButton.innerText = 'ORDER!'
 
         function displayOrderBtnParagraph() {
            alert(`You ordered ${numberOfDrinks} ${menu.name}s!

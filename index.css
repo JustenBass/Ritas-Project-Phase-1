@@ -73,7 +73,7 @@ img#venue {
   }
 
 
-  #minusBtn{
+  .minusBtn{
     margin-right: 17%;
     height: 50px;
     width: 100px;
@@ -100,7 +100,7 @@ img#venue {
 
   }
 
-  #orderButton {
+  .orderButton {
     margin-left: 33%;
     height: 50px;
     width: 100px;
