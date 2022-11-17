@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  return 'hello'
+  margaritaData()
 });
 
 
@@ -11,73 +11,61 @@ document.getElementById('ritaAddress').innerText = '756 9th Ave, New York, NY 10
 
 
 function renderMargarita(menu) {
-    let card = document.createElement('div')
-    card.className = 'card'
-    card.id = 'cardId'
+    const menuHolder = document.createElement('div')
+    menuHolder.id = 'ritasMenu'
 
-    let h1 = document.createElement('h1')
-    h1.className = 'drinkTitles'
-    h1.innerText = menu.name
-    h1.addEventListener('mouseover', (e) => {
+    const drinkTitles = document.createElement('h1')
+    drinkTitles.className = 'margTitles'
+    drinkTitles.innerText = menu.name
+
+    drinkTitles.addEventListener('mouseover', (e) => {
       e.target.style.color = "green"
     })
 
-    h1.addEventListener('mouseout', (e) => {
+    drinkTitles.addEventListener('mouseout', (e) => {
       e.target.style.color = "black"
     })
 
-    card.append(h1)
-
-    let img = document.createElement('img')
-    img.className = 'photo'
-    img.id ='photo2'
-    img.src = menu.image
-
-    // img.addEventListener('mouseover', () => {
-    //   if(menu.name === "The Tommy"){
-    //  alert(`The ${menu.name} is made with fresh squeezed lime juice, agave, and Casa Migos Blanco Tequila`)
-    //   } else if (menu.name === "Ms. Short Cake"){
-    //     alert(`The ${menu.name} is made with fresh squeezed lime juice, agave, strawberry pure and Don Julio Blanco Tequila`)
-    //   } else if (menu.name === "Holy Shh-pice"){
-    //     alert(`The ${menu.name} is made with fresh squeezed lime juice, fresh squeezed cucumber juice, muddled sereno, agave, and Patron Blanco Tequila`)
-    //   }
-    //   else if (menu.name === "Sugar High"){
-    //     alert(`The ${menu.name} is made with fresh squeezed lime juice, fresh squeezed watermelon juice, agave, and Espolon Blanco Tequila`)
-    //   } else if (menu.name === "MAN-go away"){
-    //     alert(`The ${menu.name} is made with fresh squeezed lime juice, mango pure mixed with tajin, agave, and Dulce Vida Blanco Tequila`)
-    //   }
-
-    // })
-    card.append(img)
+    menuHolder.append(drinkTitles)
 
 
-    let p = document.createElement('p')
-    p.innerText = menu.description
-    p.id = 'drink-description'
-    card.append(p)
+    const drinkImg = document.createElement('img')
+    drinkImg.className = 'drinkImgs'
+    drinkImg.src = menu.image
 
-    let numberOfDrinks = menu.quantity
+    menuHolder.append(drinkImg)
+
+
+    const drinkDescription = document.createElement('p')
+    drinkDescription.innerText = menu.description
+    drinkDescription.className = 'drinkDescriptions'
+
+    menuHolder.append(drinkDescription)
+
+    const numberOfDrinks = menu.quantity
     numberOfDrinks.id = 'test'
 
-    let minusButton = document.createElement('button')
-      minusButton.className = 'minusBtn'
+    const minusButton = document.createElement('button')
       minusButton.id = 'minusBtn'
       minusButton.innerText = '- 🍹'
-      card.append(minusButton)
+
+
+      menuHolder.append(minusButton)
+
       minusButton.addEventListener('click', () => {
         if(numberOfDrinks >= 1){
          numberOfDrinks--
        }
-       span.innerHTML = numberOfDrinks
+       quantityCount.innerHTML = numberOfDrinks
        })
 
-       let span = document.createElement('span')
-       span.className = 'quantityCounter'
-       span.innerHTML = numberOfDrinks
+       const quantityCount = document.createElement('span')
+       quantityCount.id = 'quantityCounter'
+       quantityCount.innerHTML = numberOfDrinks
 
 
 
-       card.append(span)
+       menuHolder.append(quantityCount)
 
 
 
@@ -90,26 +78,21 @@ function renderMargarita(menu) {
         span.innerHTML = numberOfDrinks
 
         })
-        card.append(plusButton)
+        menuHolder.append(plusButton)
 
-        let sectionOrderBTN = document.createElement('section')
+        let orderSection = document.createElement('section')
         let orderButton = document.createElement('button')
         orderButton.id ='orderButton'
         orderButton.innerText = 'ORDER'
-        let orderBtnParagraph = document.createElement('p')
-        orderBtnParagraph.id = 'order-confirmation'
-
-
 
         function displayOrderBtnParagraph() {
-          orderBtnParagraph = alert(`You ordered ${numberOfDrinks} ${menu.name}s! Your order will be ready for pick-up upon arrival. Payment is due upon arrival.`)
+           alert(`You ordered ${numberOfDrinks} ${menu.name}s!
+           Your order will be ready for pick-up upon arrival. Payment
+           is due upon arrival.`)
         }
 
         function resetQuantity(){
-          setTimeout(() => {
-           span.innerText = numberOfDrinks = 0
-          }, 0000)
-
+          setTimeout(() => span.innerText = numberOfDrinks = 0, 0000)
         }
 
         orderButton.addEventListener('click', displayOrderBtnParagraph)
@@ -118,18 +101,18 @@ function renderMargarita(menu) {
 
 
 
-        card.append(sectionOrderBTN)
-        sectionOrderBTN.append(orderButton)
-        sectionOrderBTN.append(orderBtnParagraph)
+        menuHolder.append(orderSection)
+        orderSection.append(orderButton)
 
 
 
 
 
 
-        document.querySelector('#menu').appendChild(card)
+
+        document.querySelector('#menu').appendChild(menuHolder)
 }
-margaritaData()
+
 
 
 

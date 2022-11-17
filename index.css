@@ -19,18 +19,18 @@ body {
     font-size: 400%;
 }
 
-h1.drinkTitles {
+.margTitles {
     color:black;
     margin-left: 26%;
     font-family: cursive;
 }
 
-.card {
+#ritasMenu {
     position: relative;
     margin-left: 25%;
 }
 
-#drink-description {
+.drinkDescriptions {
   margin-right: 24%;
   margin-left: center;
   font-size: larger;
@@ -57,7 +57,7 @@ img#venue {
     height: 900;
 }
 
-img.photo{
+.drinkImgs{
     height: 445px;
     width: 450px;
     margin-left: 4%;
@@ -73,7 +73,7 @@ img.photo{
   }
 
 
-  .minusBtn{
+  #minusBtn{
     margin-right: 17%;
     height: 50px;
     width: 100px;
