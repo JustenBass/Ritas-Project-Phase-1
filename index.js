@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById('title').innerText = "RITAS"
 
-document.getElementById('venue').src= "https://images.squarespace-cdn.com/content/v1/5ded6e17e5b0744826c470fc/1575856661048-D3GR7XK0ZHVJ8CRV5GQE/_MG_2705.jpg?format=1500w"
+document.getElementById('venue').src=
+"https://images.squarespace-cdn.com/content/v1/5ded6e17e5b0744826c470fc/1575856661048-D3GR7XK0ZHVJ8CRV5GQE/_MG_2705.jpg?format=1500w"
 
 document.getElementById('ritaAddress').innerText = '756 9th Ave, New York, NY 10019'
 
@@ -38,7 +39,7 @@ function renderMargarita(menu) {
 
     const drinkDescription = document.createElement('p')
     drinkDescription.innerText = menu.description
-    drinkDescription.className = 'drinkdDescription'
+    drinkDescription.className = 'drinkDescriptions'
 
     menuHolder.append(drinkDescription)
 
@@ -78,35 +79,29 @@ function renderMargarita(menu) {
 
         menuHolder.append(plusButton)
 
+
         let orderSection = document.createElement('section')
+        menuHolder.append(orderSection)
+
+
         let orderButton = document.createElement('button')
         orderButton.className ='orderButton'
-        orderButton.innerText = 'ORDER!'
-
-        function displayOrderBtnParagraph() {
-           alert(`You ordered ${numberOfDrinks} ${menu.name}s!
-           Your order will be ready for pick-up upon arrival. Payment
-           is due upon arrival.`)
-        }
-
-        function resetQuantity(){
-          setTimeout(() => span.innerText = numberOfDrinks = 0, 0000)
-        }
-
-        orderButton.addEventListener('click', displayOrderBtnParagraph)
-        orderButton.addEventListener('click', resetQuantity)
-
-
-
-
-        menuHolder.append(orderSection)
+        orderButton.innerText = 'ORDER'
         orderSection.append(orderButton)
 
 
+        let displayOrderBtnConfirmation = () => alert(`You ordered
+        ${numberOfDrinks} ${menu.name}s! Your order will be ready
+        for pick-up upon arrival. Paymentis due upon arrival.`)
 
 
+        function resetQuantity(){
+          setTimeout(() => drinkQuantity.innerText =
+          numberOfDrinks = 0, 0000)
+        }
 
-
+        orderButton.addEventListener('click', displayOrderBtnConfirmation)
+        orderButton.addEventListener('click', resetQuantity)
 
         document.querySelector('#menu').appendChild(menuHolder)
 }
