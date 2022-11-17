@@ -101,7 +101,8 @@ function renderMargarita(menu) {
 
         let displayOrderBtnConfirmation = () => alert(`You ordered
         ${numberOfDrinks} ${menu.name}s! Your order will be ready
-        for pick-up upon arrival. Paymentis due upon arrival. Youre order number is ${orderNumber()}`)
+        for pick-up upon arrival. Paymentis due upon arrival. Your
+        order number is ${orderNumber()}`)
 
 
         function resetQuantity(){
