@@ -38,16 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  function mouseOver(element){
-    element.addEventListener('mouseover', (e) => {
+  function mouseOver(drinkTitles){
+    drinkTitles.addEventListener('mouseover', (e) => {
       e.target.style.color = "green"
     })
   }
 
 
 
-  function mouseOut(element){
-    element.addEventListener('mouseout', (e) => {
+  function mouseOut(drinkTitles){
+    drinkTitles.addEventListener('mouseout', (e) => {
       e.target.style.color = "black"
     })
   }
@@ -56,31 +56,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  function decrement(element, element2, element3){
-    element.addEventListener('click', () => {
-
-      if(element2 >= 1){
-        --element2
+  function decrement(decBtn, numberOfDrinks, drinkQuantity){
+    numberOfDrinks = Number(numberOfDrinks)
+    decBtn.addEventListener('click', () => {
+      console.log(numberOfDrinks)
+      if(numberOfDrinks > 0){
+        numberOfDrinks--
       }
-      element3.innerHTML = element2
+      drinkQuantity.innerHTML = numberOfDrinks
     })
   }
 
 
-  function increment(element, element2, element3){
-    element.addEventListener('click', () => {
-      element2++
-      element3.innerHTML = element2
+  function increment(incBtn, numberOfDrinks, drinkQuantity){
+    incBtn.addEventListener('click', () => {
+      console.log(numberOfDrinks)
+      numberOfDrinks++
+      drinkQuantity.innerHTML = numberOfDrinks
     })
   }
 
 
 
 
-  function orderConfirmation(element, element2, element3){
-    element.addEventListener('click', ()=>{
+  function orderConfirmation(orderButton, numberOfDrinks, drinkName){
+    orderButton.addEventListener('click', ()=>{
       return alert(`You ordered
-      ${element2} ${element3}s! Your order will be ready
+      ${numberOfDrinks} ${drinkName}s! Your order will be ready
       for pick-up upon arrival. Payment is due upon arrival. Your
       order number is.`)
     })
@@ -119,7 +121,8 @@ function renderMargarita(menu) {
     menuHolder.append(drinkDescription)
 
     // quantity set at zero in db json datab
-    let numberOfDrinks = menu.quantity
+    const numberOfDrinks = menu.quantity
+    console.log('#', numberOfDrinks)
 
 
     // decrement button
@@ -131,7 +134,7 @@ function renderMargarita(menu) {
     // drink quantity count
     const drinkQuantity = document.createElement('span')
     drinkQuantity.className = 'quantityCounter'
-    drinkQuantity.innerHTML = 0
+    drinkQuantity.innerHTML = numberOfDrinks
     menuHolder.append(drinkQuantity)
 
     // increment button
@@ -191,7 +194,7 @@ function renderMargarita(menu) {
         // ${numberOfDrinks} ${menu.name}s! Your order will be ready
         // for pick-up upon arrival. Payment is due upon arrival. Your
         // order number is ${orderNumber()}`)
-        // order alert confirmation\\
+
         orderConfirmation(orderButton, numberOfDrinks, menu.name)
 
 
