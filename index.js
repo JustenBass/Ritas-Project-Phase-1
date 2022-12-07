@@ -57,13 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function decrement(decBtn, numberOfDrinks, drinkQuantity){
-    numberOfDrinks = Number(numberOfDrinks)
+
     decBtn.addEventListener('click', () => {
+      numberOfDrinks = parseInt(numberOfDrinks)
       console.log(numberOfDrinks)
+      console.log(drinkQuantity)
       if(numberOfDrinks > 0){
         numberOfDrinks--
       }
-      drinkQuantity.innerHTML = numberOfDrinks
+     drinkQuantity.innerHTML = numberOfDrinks
     })
   }
 
@@ -94,6 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(resetQuantity, 0000)
 
 
+
+
 function renderMargarita(menu) {
     const menuHolder = document.createElement('div')
     menuHolder.id = 'ritasMenu'
@@ -121,7 +125,8 @@ function renderMargarita(menu) {
     menuHolder.append(drinkDescription)
 
     // quantity set at zero in db json datab
-    const numberOfDrinks = menu.quantity
+    let numberOfDrinks = menu.quantity
+
     console.log('#', numberOfDrinks)
 
 
@@ -198,7 +203,7 @@ function renderMargarita(menu) {
         orderConfirmation(orderButton, numberOfDrinks, menu.name)
 
 
-        const resetQuantity = () => {
+        let resetQuantity = () => {
           drinkQuantity.innerText =
           numberOfDrinks = 0
         }
