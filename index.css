@@ -10,8 +10,6 @@ body {
 
 }
 
-
-
 #ritaAddress {
     color: white;
     background-color:#73AD21;
@@ -36,21 +34,12 @@ body {
   font-size: larger;
 }
 
-
-p{
-    color: black;
-}
-
-
-
-  #menu {
+#menu {
     width: 900px;
     margin: auto;
     border: 10px solid #73AD21;
     background-color: white;
   }
-
-
 
   #venue {
     width: 919px;
@@ -63,15 +52,11 @@ p{
     margin-left: 4%;
 }
 
-
-
-
-  .container {
+.container {
     width: 900px;
     margin: auto;
     border: 3px solid #73AD21;
   }
-
 
   .minusBtn{
     margin-right: 17%;

@@ -1,85 +1,173 @@
+
+// const form = document.getElementById('comment-form')
+
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   console.log(e.target.children)
+
+//   let input1 = e.target.children[1].value
+//   let input2= e.target.children[3].value
+//   let p = document.createElement('p')
+
+//   p.append(input1)
+
+//  let commentSection = document.getElementById("comment-form")
+
+//  commentSection.appendChild(p)
+
+// let data = {
+//   image: input2
+// }
+
+// fetch('http://localhost:3000/menu', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify(data)
+// })
+// .then(res => res.json())
+// .then(data => renderMargarita(data))
+
+// })
+
+
 document.addEventListener("DOMContentLoaded", () => {
   margaritaData()
 });
 
 
-document.getElementById('title').innerText = "'RITAS"
 
-document.getElementById('venue').src=
-"https://images.squarespace-cdn.com/content/v1/5ded6e17e5b0744826c470fc/1575856661048-D3GR7XK0ZHVJ8CRV5GQE/_MG_2705.jpg?format=1500w"
+  function mouseOver(element){
+    element.addEventListener('mouseover', (e) => {
+      e.target.style.color = "green"
+    })
+  }
 
-document.getElementById('ritaAddress').innerText = '756 9th Ave, New York, NY 10019'
+
+
+  function mouseOut(element){
+    element.addEventListener('mouseout', (e) => {
+      e.target.style.color = "black"
+    })
+  }
+
+
+
+
+
+  function decrement(element, element2, element3){
+    element.addEventListener('click', () => {
+
+      if(element2 >= 1){
+        --element2
+      }
+      element3.innerHTML = element2
+    })
+  }
+
+
+  function increment(element, element2, element3){
+    element.addEventListener('click', () => {
+      element2++
+      element3.innerHTML = element2
+    })
+  }
+
+
+
+
+  function orderConfirmation(element, element2, element3){
+    element.addEventListener('click', ()=>{
+      return alert(`You ordered
+      ${element2} ${element3}s! Your order will be ready
+      for pick-up upon arrival. Payment is due upon arrival. Your
+      order number is.`)
+    })
+  }
+
+
+
+
+  setTimeout(resetQuantity, 0000)
 
 
 function renderMargarita(menu) {
     const menuHolder = document.createElement('div')
     menuHolder.id = 'ritasMenu'
+    document.querySelector('#menu').appendChild(menuHolder)
 
+    // drink name headers
     const drinkTitles = document.createElement('h1')
     drinkTitles.className = 'margTitles'
     drinkTitles.innerText = menu.name
-
-    drinkTitles.addEventListener('mouseover', (e) => {
-      e.target.style.color = "green"
-    })
-
-    drinkTitles.addEventListener('mouseout', (e) => {
-      e.target.style.color = "black"
-    })
-
     menuHolder.append(drinkTitles)
+    // callback functions to make titles turn green and black
+    mouseOver(drinkTitles)
+    mouseOut(drinkTitles)
 
-
+    // drink images
     const drinkImg = document.createElement('img')
     drinkImg.className = 'drinkImgs'
     drinkImg.src = menu.image
-
     menuHolder.append(drinkImg)
 
-
+    // drink descriptions
     const drinkDescription = document.createElement('p')
     drinkDescription.innerText = menu.description
     drinkDescription.className = 'drinkDescriptions'
-
     menuHolder.append(drinkDescription)
 
-
+    // quantity set at zero in db json datab
     let numberOfDrinks = menu.quantity
 
 
-    let minusButton = document.createElement('button')
-      minusButton.className = 'minusBtn'
-      minusButton.innerText = '- 🍹'
+    // decrement button
+    const decrementButton = document.createElement('button')
+    decrementButton.className = 'minusBtn'
+    decrementButton.innerText = '- 🍹'
+    menuHolder.append(decrementButton)
 
-      minusButton.addEventListener('click', () => {
-        if(numberOfDrinks >= 1){
-         numberOfDrinks--
-       }
-       drinkQuantity.innerHTML = numberOfDrinks
-       })
-       menuHolder.append(minusButton)
+    // drink quantity count
+    const drinkQuantity = document.createElement('span')
+    drinkQuantity.className = 'quantityCounter'
+    drinkQuantity.innerHTML = 0
+    menuHolder.append(drinkQuantity)
 
+    // increment button
+    const incrementButton = document.createElement('button')
+    incrementButton.className = 'plusBtn'
+    incrementButton.innerText = '+ 🍹'
+    menuHolder.append(incrementButton)
 
-       let drinkQuantity = document.createElement('span')
-       drinkQuantity.className = 'quantityCounter'
-      drinkQuantity.innerHTML = numberOfDrinks
-
-      menuHolder.append(drinkQuantity)
-
-
-      let plusButton = document.createElement('button')
-      plusButton.className = 'plusBtn'
-      plusButton.innerText = '+ 🍹'
-
-      plusButton.addEventListener('click', () => {
-        numberOfDrinks ++
-        drinkQuantity.innerHTML = numberOfDrinks
-
-        })
-
-        menuHolder.append(plusButton)
+      // callback functions that make dec and incre buttons work
+      decrement(decrementButton, numberOfDrinks, drinkQuantity)
+      increment(incrementButton, numberOfDrinks, drinkQuantity)
 
 
+
+      // minusButton.addEventListener('click', () => {
+      //   if(numberOfDrinks >= 1){
+      //    numberOfDrinks--
+      //  }
+      //  drinkQuantity.innerHTML = numberOfDrinks
+      //  })
+
+
+        //  plusButton.addEventListener('click', () => {
+      //    numberOfDrinks ++
+      //    drinkQuantity.innerHTML = numberOfDrinks
+
+      //    })
+
+
+
+
+
+
+
+
+        // where order button lives
         let orderSection = document.createElement('section')
         menuHolder.append(orderSection)
 
@@ -89,39 +177,91 @@ function renderMargarita(menu) {
         orderButton.innerText = 'ORDER'
         orderSection.append(orderButton)
 
-        function orderNumber(){
-           if(numberOfDrinks < 5){
-          return 33
-        } else if (numberOfDrinks > 5){
-          return 66
-        } else {
-            console.log(55)
-          }
-      }
+      //   function orderNumber(){
+      //      if(numberOfDrinks < 5){
+      //     return 33
+      //   } else if (numberOfDrinks > 5){
+      //     return 66
+      //   } else {
+      //       console.log(55)
+      //     }
+      // }
 
-        let displayOrderBtnConfirmation = () => alert(`You ordered
-        ${numberOfDrinks} ${menu.name}s! Your order will be ready
-        for pick-up upon arrival. Paymentis due upon arrival. Your
-        order number is ${orderNumber()}`)
+        // let displayOrderBtnConfirmation = () => alert(`You ordered
+        // ${numberOfDrinks} ${menu.name}s! Your order will be ready
+        // for pick-up upon arrival. Payment is due upon arrival. Your
+        // order number is ${orderNumber()}`)
+        // order alert confirmation\\
+        orderConfirmation(orderButton, numberOfDrinks, menu.name)
 
 
-        function resetQuantity(){
-          setTimeout(() => drinkQuantity.innerText =
-          numberOfDrinks = 0, 0000)
+        const resetQuantity = () => {
+          drinkQuantity.innerText =
+          numberOfDrinks = 0
         }
 
-        orderButton.addEventListener('click', displayOrderBtnConfirmation)
+
+        // orderButton.addEventListener('click', displayOrderBtnConfirmation)
         orderButton.addEventListener('click', resetQuantity)
 
-        document.querySelector('#menu').appendChild(menuHolder)
+
 }
 
 
+
+const form = document.getElementById('comment-form')
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  console.log(e.target.children)
+
+  let input1 = e.target.children[1].value
+  let input2= e.target.children[3].value
+  let p = document.createElement('p')
+
+  p.append(input1)
+
+ let commentSection = document.getElementById("comment-form")
+
+ commentSection.appendChild(p)
+
+let data = {
+  image: input2
+}
+
+fetch('http://localhost:3000/menu', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+})
+.then(res => res.json())
+.then(data => renderMargarita(data))
+
+})
 
 
 function margaritaData(){
     fetch('http://localhost:3000/menu')
     .then(res => res.json())
-    .then (margData => margData.forEach(menu => renderMargarita(menu)))
+    .then (margData => {
+
+      margData.forEach(menu => renderMargarita(menu))})
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
