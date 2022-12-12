@@ -1,37 +1,4 @@
 
-// const form = document.getElementById('comment-form')
-
-// form.addEventListener('submit', (e) => {
-//   e.preventDefault()
-//   console.log(e.target.children)
-
-//   let input1 = e.target.children[1].value
-//   let input2= e.target.children[3].value
-//   let p = document.createElement('p')
-
-//   p.append(input1)
-
-//  let commentSection = document.getElementById("comment-form")
-
-//  commentSection.appendChild(p)
-
-// let data = {
-//   image: input2
-// }
-
-// fetch('http://localhost:3000/menu', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify(data)
-// })
-// .then(res => res.json())
-// .then(data => renderMargarita(data))
-
-// })
-
-
 document.addEventListener("DOMContentLoaded", () => {
   margaritaData()
 });
@@ -53,44 +20,53 @@ function mouseOut(drinkTitles){
 
 // decrement button callback function
 
-function decrement(decBtn){
-  const qCounter = document.querySelector('span.quantityCounter')
-  console.log("qCounter", qCounter)
-   decBtn.addEventListener('click', () => {
-    let quantityInsider2 = parseInt(qCounter.innerHTML)
+function decrement(qty){
+  console.log(qty)
+    let quantityInsider2 = parseInt(qty)
     if( quantityInsider2 > 0){
-    quantityInsider2--
+    quantityInsider2-= 1
     }
-   qCounter.innerHTML = quantityInsider2
-  })
+   return quantityInsider2
 }
 
 
 
 //increment button callback function
-function increment(incBtn){
-  debugger
-  const qCounter = document.querySelector('span.quantityCounter')
+function increment(qty){
 
   // console.log(typeof qCounter)
-  // console.log(qCounter)
-  incBtn.addEventListener('click', () => {
     // console.log(numberOfDrinks)
-    let quantityInsider = parseInt(qCounter.innerHTML)
-    quantityInsider++
-    qCounter.innerHTML = quantityInsider
-  })
+    let quantityInsider2 = parseInt(qty)
+    quantityInsider2+= 1
+    return quantityInsider2
 }
 
 
+let orderNumber = () => {
+  const qCounter = document.querySelector('.quantityCounter')
+  let quantityInsider = parseInt(qCounter.innerHTML)
+  let alertQuantityShown = quantityCounterinnerHTML = quantityInsider
+
+  if(alertQuantityShown === quantityInsider){
+    return Math.floor(Math.random() * 500)
+  }
+}
 
 
-function orderConfirmation(orderButton, numberOfDrinks, drinkName){
-  orderButton.addEventListener('click', ()=>{
+function orderConfirmation(orderButton, drinkName){
+  orderButton.addEventListener('click', (e)=>{
+    const quantityCounter = document.querySelector('.quantityCounter')
+    // console.log(typeof quantityCounter)
+    // console.log(quantityCounter)
+    let quantityInsider = parseInt(quantityCounter.innerHTML)
+    // console.log(typeof quantityInsider)
+    // console.log(quantityInsider)
+    let alertQuantityShown = quantityCounterinnerHTML = quantityInsider
+
     return alert(
-   `You ordered ${numberOfDrinks} ${drinkName}s!
+   `You ordered ${alertQuantityShown} ${drinkName}s!
     Your order will be ready for pick-up upon arrival.
-    Payment is due upon arrival. Your order number is.`)
+    Payment is due upon arrival. Your order number is ${orderNumber()}.`)
   })
 }
 
@@ -99,7 +75,7 @@ function orderConfirmation(orderButton, numberOfDrinks, drinkName){
 function resetQuantityPostConfirmation(orderBtn, drinkQuantity){
   orderBtn.addEventListener('click', () => {
     console.log(drinkQuantity)
-    return drinkQuantity.innerText = 0
+    return drinkQuantity.innerText = 1
   })
 }
 
@@ -110,15 +86,20 @@ function resetQuantityPostConfirmation(orderBtn, drinkQuantity){
 
 function renderMargarita(menu) {
 
+
+
   const menuHolder = document.createElement('div')
   menuHolder.id = 'ritasMenu'
   document.querySelector('#menu').appendChild(menuHolder)
+
 
   // drink name headers
   const drinkTitles = document.createElement('h1')
   drinkTitles.className = 'margTitles'
   drinkTitles.innerText = menu.name
   menuHolder.append(drinkTitles)
+
+
   // callback functions to make titles turn green and black
   mouseOver(drinkTitles)
   mouseOut(drinkTitles)
@@ -144,10 +125,17 @@ function renderMargarita(menu) {
   decrementButton.innerText = '- 🍹'
   menuHolder.append(decrementButton)
 
+  decrementButton.addEventListener('click',() => {
+  decrement(drinkQuantity.innerText)
+  drinkQuantity.innerText = quantityInsider2
+})
+
 // drink quantity count
   const drinkQuantity = document.createElement('span')
   drinkQuantity.className = 'quantityCounter'
-  drinkQuantity.innerHTML = 0
+  drinkQuantity.innerHTML = 1
+
+
   menuHolder.append(drinkQuantity)
 
   // increment button
@@ -156,105 +144,90 @@ function renderMargarita(menu) {
   incrementButton.innerText = '+ 🍹'
   menuHolder.append(incrementButton)
 
+  incrementButton.addEventListener('click', () => {
+    increment(drinkQuantity.innerText)
+    drinkQuantity.innerText = quantityInsider2
+  })
+
   // callback functions that make dec and incre buttons work
-  decrement(decrementButton, drinkQuantity)
+  decrement(decrementButton)
   increment(incrementButton)
 
-
-
-
-    // minusButton.addEventListener('click', () => {
-    //   if(numberOfDrinks >= 1){
-    //    numberOfDrinks--
-    //  }
-    //  drinkQuantity.innerHTML = numberOfDrinks
-    //  })
-
-
-      //  plusButton.addEventListener('click', () => {
-    //    numberOfDrinks ++
-    //    drinkQuantity.innerHTML = numberOfDrinks
-
-    //    })
-
-      // where order button lives
+  // where order button lives
       let orderSection = document.createElement('section')
       menuHolder.append(orderSection)
 
-      // order button
+  // order button
       let orderButton = document.createElement('button')
       orderButton.className ='orderButton'
       orderButton.innerText = 'ORDER'
       orderSection.append(orderButton)
 
-    //   function orderNumber(){
-    //      if(numberOfDrinks < 5){
-    //     return 33
-    //   } else if (numberOfDrinks > 5){
-    //     return 66
-    //   } else {
-    //       console.log(55)
-    //     }
-    // }
+  // delete butoon
+  let dbtn = document.createElement('button')
+  dbtn.className = 'delete'
+  dbtn.innerHTML = 'delete'
+  orderSection.append(dbtn)
 
-      // let displayOrderBtnConfirmation = () => alert(`You ordered
-      // ${numberOfDrinks} ${menu.name}s! Your order will be ready
-      // for pick-up upon arrival. Payment is due upon arrival. Your
-      // order number is ${orderNumber()}`)
+
+
+
+
+
+
+  // name of drinks in db json data
       let drinkName = menu.name
 
-      orderConfirmation(orderButton, numberOfDrinks, drinkName)
+      orderConfirmation(orderButton, drinkName)
 
       resetQuantityPostConfirmation(orderButton, drinkQuantity)
 
 
-  // let resetQuantity = () => {
-  //         drinkQuantity.innerText =
-  //         numberOfDrinks = 0
-  //       }
-
-
-
-  // setTimeout(resetQuantity, 0000)
-
-      // orderButton.addEventListener('click', displayOrderBtnConfirmation)
 }
 
 
 
 
 
-// const form = document.getElementById('comment-form')
 
-// form.addEventListener('submit', (e) => {
-//   e.preventDefault()
-//   console.log(e.target.children)
+const form = document.getElementById('comment')
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  console.log(e.target.children)
 
-//   let input1 = e.target.children[1].value
-//   let input2= e.target.children[3].value
-//   let p = document.createElement('p')
+  let input1 = e.target.children[1].value
+  let input2= e.target.children[3].value
+  let input3= e.target.children[5].value
+  let input4= e.target.children[7].value
 
-//   p.append(input1)
 
-//  let commentSection = document.getElementById("comment-form")
+  let p = document.createElement('p')
+  p.append(input1)
 
-//  commentSection.appendChild(p)
+ let commentSection = document.getElementById("comment")
+ commentSection.appendChild(p)
 
-// let data = {
-//   image: input2
-// }
+let data = {
+  name: input2,
+  image: input3,
+  description: input4
+}
 
-// fetch('http://localhost:3000/menu', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify(data)
-// })
-// .then(res => res.json())
-// .then(data => renderMargarita(data))
+fetch('http://localhost:3000/menu', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+})
+.then(res => res.json())
+.then(data => renderMargarita(data))
 
-// })
+})
+
+
+
+
 
 
 function margaritaData(){
@@ -264,7 +237,6 @@ function margaritaData(){
 
       margData.forEach(menu => renderMargarita(menu))})
 }
-
 
 
 

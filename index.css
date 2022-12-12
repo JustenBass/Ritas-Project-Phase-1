@@ -94,6 +94,14 @@ body {
     border-color: gold;
   }
 
+  .delete {
+    margin-left: 33%;
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border-color: gold;
+  }
 
 
 
